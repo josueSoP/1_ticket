@@ -1,0 +1,57 @@
+<%- include("cabeceras/cabecera.ejs",{tituloWeb:'Presupuestos'}) %>
+
+<body>
+  <h1 class="p-3 text-center">Generación de presupuestos para proyectos de TI</h1>
+  
+  <div class="container">
+    <div class="d-flex p-2">
+      <a href="/usuarios" class="btn btn-secondary">Editar usurio <i class='bx bxs-user-detail' ></i></a>
+      <a href="/login" class="btn btn-danger">Cerrar Sesion <i class='bx bx-user-x'></i></a>
+    </div>
+    <div class="d-flex flex-row-reverse">
+      <a href="/nuevoProyecto" class="btn btn-primary mt-4">Nuevo Presupuesto</a>
+    </div>
+    
+    <table class="table align-middle table-dark table-striped text-center mt-4">
+      <thead>
+        <tr class="bg-primary text-white">
+          <th scope="col">Id</th>
+          <th scope="col">FECHA DE CREACIÓN</th>
+          <th scope="col">PROYECTO</th>
+          <th scope="col">VERSIONES</th>
+          <th scope="col">ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- foreach para recibir resultados de la tabla usuarios -->
+        <% results.forEach((proyect)=>{ %>
+          <tr>
+            <td>
+              <%= proyect.id %>
+            </td>
+            <td>
+              <%= proyect.mes %>
+            </td>
+            <td>
+              <%= proyect.proyecto %>
+            </td>
+            <td>
+              <%= proyect.versiones %>
+            </td>
+            <td>
+                <a href="/modificar/<%= proyect.id %>" class="btn btn-outline-info"><i class='bx bxs-edit'></i></a>
+                <a onclick="eliminarListar('<%= proyect.id %>')" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'></i></a>
+                <a onclick="enviarProyecto('<%= proyect.id %>')" class="btn btn-outline-success"><i class='bx bx-send'></i></a>
+            </td>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="js/eliminar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+
+</html>

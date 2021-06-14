@@ -1,0 +1,28 @@
+<%- include("cabeceras/cabecera.ejs",{tituloWeb:'Nuevo Prejecto'}) %>
+
+<body>
+  <%- include("tablas/newProyecto.ejs") %>
+  <%- include("tablas/4.1.resumenFinanciero.ejs") %>
+  <%- include("tablas/4.2.flujoEfectivo.ejs") %>
+  <%- include("tablas//4.3.estadoResultados.ejs") %>
+  <%- include("tablas/4.4.ingresos.ejs") %>
+  <%- include("tablas/4.5.costosDirectos.ejs") %>
+  <%- include("tablas/4.6.gastosAdministrativos.ejs") %>
+  <%- include("tablas/4.7.recursos.ejs") %>
+  <%- include("tablas/4.8.costos.ejs") %>
+  <%- include("tablas/4.9.resumenCostosRecursos.ejs") %>
+
+  <div class="d-flex justify-content-evenly p-5">
+    <button type="submit" class="btn btn-primary col-md-4">Guardar</button>
+    <a href="/" class="btn btn-secondary col-md-4">Cancelar</a>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/columnasFilas.js"></script>
+  <script src="js/operaciones.js"></script>
+  <script src="js/guardarProyecto.js"></script>
+</body>
+
+</html>

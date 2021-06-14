@@ -1,0 +1,32 @@
+<div class="container">    
+  <table class="table align-middle table-dark table-hover text-center mt-4 caption-top" id="tablaIngresos">
+    <caption class="h3">Ingresos</caption>
+    <thead>
+      <tr class="bg-primary text-white">
+        <th scope="col">CONCEPTO</th>
+        <th scope="col">MES 1</th>
+        <th scope="col">TOTAL</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody id="tbodyIn">
+      <tr>
+        <td><input class="form-control text-center " type="text" placeholder="tituloIn" id="tituloIn"  required></td>
+        <td><input class="form-control text-center " type="number" placeholder="conceptoIn" id="conceptoIn" step="0.01" required></td>
+        <td><input class="form-control text-center " type="number" placeholder="sumIn.concepto" id="sumConceptoIn" step="0.01" disabled></td>
+        <td><a onclick="eliminar('')" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'></i></a></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr class="bg-primary text-white">
+        <td scope="col">TOTAL</th>
+        <td><input class="form-control text-center " type="number" placeholder="totIn.mes+=conceptoIn" id="totalMesIn" step="0.01" disabled></td>
+        <td><input class="form-control text-center " type="number" placeholder="sumIn.total" id="sumTotalIn" step="0.01" disabled></td>
+        <td scope="col"></th>
+      </tr>
+    </tfoot>
+  </table>
+  <div class="d-flex justify-content-evenly">
+    <button type="button" class="btn btn-primary col-md-4" id="agregarIngresos"><i class='bx bxs-plus-circle'></i>AGREGAR FILA</button>
+  </div>
+</div>

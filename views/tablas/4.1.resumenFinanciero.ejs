@@ -1,0 +1,37 @@
+  <div class="container">
+    <h3 class="p-3 text-center">NUEVO PRESUPUESTO</h3>
+    
+    <table class="table align-middle table-dark table-hover text-center mt-4 caption-top">
+      <caption class="h3">Resumen Financiero</caption>
+      <thead>
+        <tr class="bg-primary text-white">
+          <th scope="col"></th>
+          <th scope="col">MES 1</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>VENTAS</td>
+          <td><input class="form-control text-center " type="number" placeholder="ventasRF=ingresosFE" id="ventasRF"  step="0.01" disabled></td>
+        </tr>
+        <tr>
+          <td>COSTOS</td>
+          <td><input class="form-control text-center " type="number" placeholder="costosRF=egresosFE" id="costosRF"  step="0.01" disabled></td>
+
+        </tr>
+        <tr>
+          <td>MARGEN</td>
+          <td><input class="form-control text-center " type="number" placeholder="margenRF=ventasRF-costosRF [-R]" id="margenRF" step="0.01" disabled></td>
+        </tr>
+        <tr>
+          <td>%</td>
+          <td><input class="form-control text-center " type="number" placeholder="porcenRF=margenRF/ventasRF" id="porcenRF" step="0.01" disabled></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+  <div class="container">    
+    <table class="table align-middle table-dark table-hover text-center mt-4 caption-top" id="tablaGastos">
+      <caption class="h3">Gastos Administrativos</caption>
+      <thead>
+        <tr class="bg-primary text-white">
+          <th scope="col">CONCEPTO</th>
+          <th scope="col">MES 1</th>
+          <th scope="col">TOTAL</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody id="tbodyGa">
+        <tr>
+          <td>
+            <select id="tituloGA" name="opcionCD" class="form-select" required>
+              <option selected disabled value="">Opciones...</option>
+              <option value="1">1 Campo Libre</option>
+              <option value="2">2 Sumatoria de columnas de otras secciones</option>
+              <option value="3">3 Porcentaje de otras columnas de otras secciones</option>
+            </select>
+          </td>
+          <td><input class="form-control text-center " type="text" placeholder="opcionGA1=[DECIMAL]" id="opcionGA1"  required></td>
+          <td><input class="form-control text-center " type="number" placeholder="sumGA.concepto" id="sumConceptoGA" step="0.01" disabled></td>
+          <td><a onclick="eliminar('')" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'></i></a></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="bg-primary text-white">
+          <td scope="col">TOTAL</th>
+          <td><input class="form-control text-center " type="number" placeholder="totGA.mes+=opcionGA" id="totalGA" step="0.01" disabled></td>
+          <td><input class="form-control text-center " type="number" placeholder="sumGA.total" id="sumTotalGA" step="0.01" disabled></td>
+          <td scope="col"></th>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="d-flex justify-content-evenly">
+      <button type="button" class="btn btn-primary col-md-4" id="agregarGastos"><i class='bx bxs-plus-circle'></i>AGREGAR FILA</button>
+    </div>
+  </div>

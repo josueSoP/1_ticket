@@ -1,0 +1,42 @@
+  <div class="container">    
+    <table class="table align-middle table-dark table-hover text-center mt-4 caption-top">
+      <caption class="h3">Estado de Resultados</caption>
+      <thead>
+        <tr class="bg-primary text-white">
+          <th scope="col"></th>
+          <th scope="col">MES 1</th>
+          <th scope="col">TOTAL</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+          <td>TITULOS</td>
+            <td><input class="form-control text-center " type="text" placeholder="tituloFE [STRING]" id="tituloER"  required></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>VENTAS</td>
+          <td><input class="form-control text-center " type="number" placeholder="ventasER=totIn.mes" id="ventasER" step="0.01" disabled></td>
+          <td><input class="form-control text-center " type="number" placeholder="sumER.ventas" id="sumVentasER" step="0.01" disabled></td>     
+        </tr>
+        <tr>
+          <td>COSTOS</td>
+          <td><input class="form-control text-center " type="number" placeholder="costosER=totCD.mes+totGA.mes" id="costosER" step="0.01" disabled></td>
+          <td><input class="form-control text-center " type="number" placeholder="sumER.costos" id="sumCostosER" step="0.01" disabled></td>
+        </tr>
+        <tr>
+          <td>MARGEN</td>
+          <td><input class="form-control text-center " type="number" placeholder="margenER=ventasER-costosER[-R]" id="margenER" step="0.01" disabled></td>
+          <td><input class="form-control text-center " type="number" placeholder="sumER.margen" id="sumMargenER" step="0.01" disabled></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="bg-primary text-white">
+          <td scope="col">SALDO FINAL</th>
+          <td><input class="form-control text-center " type="number" placeholder="acumER+=margenER" id="acumuladorER" step="0.01" disabled></td>
+          <td scope="col"></th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
