@@ -50,16 +50,7 @@ module.exports.nuevoPresupuesto = async ()=>{
         throw new Error ('Controlador: Error al Editar proyecto en la DB')
     }
 } 
-module.exports.actualizarBudget = async (id, datos) => {
-    const { proyecto, version, estado, autor, mes, anio, valores } = datos;
-    let actualizaBudget = new PresupuestoModel(proyecto, version, estado, autor, mes, anio, valores);      
-    try {
-        let resultado = await actualizaBudget.modificarPresupuesto(id);
-        return resultado;
-    } catch (err) {
-        throw new Error ('Controlador: Error al Editar proyecto en la DB')
-    }   
-}
+
 
 
 
@@ -79,3 +70,15 @@ module.exports.actualizarBudget = async (id, datos) => {
         throw new Error ('No se pudo eliminar el proyecto seleccionado')
     }
 };
+
+
+// module.exports.actualizarBudget = async (id, datos) => {
+//     const { proyecto, version, estado, autor, mes, anio, valores } = datos;
+//     let actualizaBudget = new PresupuestoModel(proyecto, version, estado, autor, mes, anio, valores);      
+//     try {
+//         let resultado = await actualizaBudget.modificarPresupuesto(id);
+//         return resultado;
+//     } catch (err) {
+//         throw new Error ('Controlador: Error al Editar proyecto en la DB')
+//     }   
+// }

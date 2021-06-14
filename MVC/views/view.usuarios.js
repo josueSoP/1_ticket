@@ -1,4 +1,5 @@
 const controladorUsuarios = require('../controllers/controller.usuarios')
+const midd = require('../../middleware/midd.verificacion');
 
 module.exports = async (app)=> {
     ////////////// LOGIN DE USUARIOS /////////////////////////
@@ -62,7 +63,7 @@ module.exports = async (app)=> {
     })
 
     // rutas para modificar un usuario
-    app.get('/edit/:id', async (req,res)=>{
+    app.get('/edit/:id', midd.verificacionUsuario, async (req,res)=>{
         let data = req.params.id;
         try {
             let resultado = await controladorUsuarios.buscarRegistro(data)
@@ -72,7 +73,7 @@ module.exports = async (app)=> {
         }
     })
 
-    app.post('/update', async (req, res)=>{
+    app.post('/update', midd.verificacionUsuario, async (req, res)=>{
         try {
             let resultado = await controladorUsuarios.modificarUsuario(req.body);
             if(resultado){
@@ -84,7 +85,7 @@ module.exports = async (app)=> {
     });
 
     // ruta para eliminar usuario
-    app.get('/delete/:id', async (req,res)=>{
+    app.get('/delete/:id', midd.verificacionUsuario, async (req,res)=>{
         let data = req.params.id;
         try {
             let resultado = await controladorUsuarios.eliminarRegistro(data)

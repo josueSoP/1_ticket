@@ -39,16 +39,6 @@ module.exports = async (app)=> {
         }
     })
 
-
-
-
-
-
-
-
-
-
-        
 /////////// RUTA: ACTUALIZAR UN PRESUPUESTO //////////// 
     app.get('/editarProyecto/:id', async (req,res)=>{
         try{
@@ -59,35 +49,6 @@ module.exports = async (app)=> {
             res.status(400).send({message:'Error en la ruta /editarProyecto'});
         }
     })
-    app.post('/actualizarPresupuesto/:id', async (req, res) => {
-        let id = req.params.id;
-        let datos = req.body;
-        try {
-            let resultado = await controladorPresupuesto.actualizarBudget(id, datos);
-            if(resultado){
-                // res.redirect('/');
-                res.status(200).send({message:'Proyecto editado'});
-            }
-        } catch (error) {
-            res.status(400).send({message:'Error en la ruta /editarProyecto'});
-        }
-    })
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /////////// RUTA: ELIMINAR UN PRESUPUESTO ////////////////////
     app.get('/eliminarProyecto/:id', async (req,res)=>{
@@ -106,3 +67,16 @@ module.exports = async (app)=> {
    
 }
 
+ // app.post('/actualizarPresupuesto/:id', async (req, res) => {
+    //     let id = req.params.id;
+    //     let datos = req.body;
+    //     try {
+    //         let resultado = await controladorPresupuesto.actualizarBudget(id, datos);
+    //         if(resultado){
+    //             // res.redirect('/');
+    //             res.status(200).send({message:'Proyecto editado'});
+    //         }
+    //     } catch (error) {
+    //         res.status(400).send({message:'Error en la ruta /editarProyecto'});
+    //     }
+    // })
