@@ -72,8 +72,8 @@ async function creaciontablas(){
             nombres: 'josue', 
             apellidos: 'soto', 
             email: 'josue@mail.com', 
-            usuario: 'josu', 
-            pass: 'jo123'
+            usuario: 'josueSP', 
+            pass: 'josue123'
         }
     });
     await Proyecto.findOrCreate({

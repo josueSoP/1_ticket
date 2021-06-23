@@ -1,9 +1,9 @@
 const controladorProyectos = require('../controllers/controller.proyecto')
-// const middAuth = require('../../middleware/middVerificacion');
+const midd = require('../../middleware/middVerificacion');
 
 module.exports = async (app)=> {
 ////////// RUTA: TABLA PRINCIPAL DE PROYECTOS ////////////
-    app.get('/', async(req,res)=> {
+    app.get('/',midd.verificacionUsuario, async(req,res)=> {
         try {
             let resultado = await controladorProyectos.listarProyectos()
             res.render('listaPrincipal.ejs', {results:resultado});
@@ -15,7 +15,7 @@ module.exports = async (app)=> {
     })
 
 ////////// RUTA: CREAR Y GUARDAR NUEVO PROYECTO: muestra las tablas  ///////////
-    app.get('/nuevoProyecto', async (req,res)=>{
+    app.get('/nuevoProyecto',midd.verificacionUsuario, async (req,res)=>{
         try{
             res.render('listaTablas.ejs');
         }catch (err){
@@ -24,7 +24,7 @@ module.exports = async (app)=> {
         }
     })
     
-    app.post('/guardarProyecto', async (req,res)=>{
+    app.post('/guardarProyecto',midd.verificacionUsuario, async (req,res)=>{
         try{
             let resultado = await controladorProyectos.guardarPresupuesto(req.body)
             if(resultado) {
@@ -40,7 +40,7 @@ module.exports = async (app)=> {
     })
 
 /////////// RUTA: ACTUALIZAR UN PRESUPUESTO //////////// 
-    app.get('/editarProyecto/:id', async (req,res)=>{
+    app.get('/editarProyecto/:id',midd.verificacionUsuario, async (req,res)=>{
         try{
             // res.redirect('/');
             res.status(200).send({message:'Proyecto editado'});
@@ -51,7 +51,7 @@ module.exports = async (app)=> {
     })
 
 /////////// RUTA: ELIMINAR UN PRESUPUESTO ////////////////////
-    app.get('/eliminarProyecto/:id', async (req,res)=>{
+    app.get('/eliminarProyecto/:id',midd.verificacionUsuario, async (req,res)=>{
         let data = req.params.id;
         try {
             let resultado = await controladorProyectos.eliminarProyecto(data)

@@ -11,7 +11,7 @@ module.exports = async (app)=> {
         }
     })
 
-    app.post('/login', async (req,res)=>{
+    app.post('/login', midd.validarLogin, async (req,res)=>{
         let usuario = req.body
         try {
             let resultado = await controladorUsuarios.chequearUsuario(usuario)
@@ -30,7 +30,7 @@ module.exports = async (app)=> {
 ////////////////////// REGISTRO de USUARIOS///////////////////////////
 
     //ruta para enlistar
-    app.get('/usuarios', async(req,res)=> {
+    app.get('/usuarios', midd.verificacionUsuario, async(req,res)=> {
         try {
             let resultado = await controladorUsuarios.listarRegistros()
             res.render('login/listaRegistro.ejs', {results:resultado});
@@ -50,7 +50,7 @@ module.exports = async (app)=> {
         }
     })
 
-    app.post('/save', async (req,res)=>{
+    app.post('/save',midd.validarRegistro, async (req,res)=>{
         try{
             let resultado = await controladorUsuarios.guardarRegistro(req.body)
             if(resultado) {
@@ -73,7 +73,7 @@ module.exports = async (app)=> {
         }
     })
 
-    app.post('/update', midd.verificacionUsuario, async (req, res)=>{
+    app.post('/update', midd.verificacionUsuario, midd.validarActualizacion, async (req, res)=>{
         try {
             let resultado = await controladorUsuarios.modificarUsuario(req.body);
             if(resultado){
